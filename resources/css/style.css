@@ -1,0 +1,94 @@
+.colorgraph {
+  height: 5px;
+  border-top: 0;
+  background: #c4e17f;
+  border-radius: 5px;
+  background-image: -webkit-linear-gradient(left, #004B34, #004B34 12.5%, #00874F 25%, #00874F 37.5%, #F88F19 37.5%, #F88F19 50%, #F1642E 50%, #F1642E 62.5%, #ED364C 62.5%, #ED364C 75%, #6D3689 75%, #6D3689 87.5%);
+  background-image: -moz-linear-gradient(left, #004B34, #004B34 12.5%,  #00874F 25%, #00874F 37.5%, #F88F19 37.5%, #F88F19 50%, #F1642E 50%, #F1642E 62.5%, #ED364C 62.5%, #ED364C 75%, #6D3689 75%, #6D3689 87.5%);
+  background-image: -o-linear-gradient(left, #004B34, #004B34 12.5%,  #00874F 25%, #00874F 37.5%, #F88F19 37.5%, #F88F19 50%, #F1642E 50%, #F1642E 62.5%, #ED364C 62.5%, #ED364C 75%, #6D3689 75%, #6D3689 87.5%);
+  background-image: linear-gradient(to right, #004B34, #004B34 12.5%,  #00874F 25%, #00874F 37.5%, #F88F19 37.5%, #F88F19 50%, #F1642E 50%, #F1642E 62.5%, #ED364C 62.5%, #ED364C 75%, #6D3689 75%, #6D3689 87.5%);
+}
+
+.logo
+{
+    background-image: url('../img/logs/worldcup.png'); 
+    width: 90px; 
+    height: 90px; 
+    text-indent: -666em;
+    margin: 5px;
+}
+
+.page-header {
+    border-bottom: #8E0809;
+    border-bottom-style: solid;
+    background-color: #8E0809;
+    margin-top: 0px;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 30px;
+  border-top-color: #F89622;
+  border-top-style: solid;
+  /* Set the fixed height of the footer here */
+  background-color: #FFF;
+}
+
+#HeadPrint{
+    display: none;
+}
+.stilyefont{
+  color: white;
+}
+
+#FooterPrint{
+    display: none;
+}
+
+#page-break{
+    display: none;
+}
+.tablebets
+{
+   border: 1px solid black;
+}
+.tableheader{
+  background-color: #f1c639;
+}
+.sizeflag{
+  height: 20px;
+  width: 15px;
+}
+.size_flag_near_match{
+  height: 80px;
+  width: 60px;
+}
+.size_worldcup_ranking{
+  height: 100%;
+  width: 500px;
+  margin-top: 20px;
+  margin-left: 140px;
+  margin-right: 140px;
+  border: 1px solid black;
+}
+.bold_font{
+  font-weight: bold;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
