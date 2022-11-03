@@ -15,9 +15,9 @@
 
 
 
-    <link href="{{ mix('/resources/css/app.css') }}" rel="stylesheet">
-    <link href="{{ mix('/resources/css/style.css') }}" rel="stylesheet">
-    <link href="{{ mix('/resources/css/toastr.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('/resources/css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('/resources/css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('/resources/css/toastr.min.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 
 

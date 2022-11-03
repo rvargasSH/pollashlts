@@ -14,10 +14,10 @@
                         </tr>
                         <tr>
                             <td align="center" >
-                                <img src="{{ mix('/resources/'.$match->flag_team1) }}" class="size_flag_near_match">
+                                <img src="{{ asset('/resources/'.$match->flag_team1) }}" class="size_flag_near_match">
                             </td>
                             <td align="center">
-                                <img src="{{ mix('/resources/'.$match->flag_team2) }}" class="size_flag_near_match">
+                                <img src="{{ asset('/resources/'.$match->flag_team2) }}" class="size_flag_near_match">
                             </td>
                         </tr>
                         <tr>
