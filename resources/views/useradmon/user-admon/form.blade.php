@@ -31,17 +31,11 @@
     <div class="col-md-6">
         <select name="deparment_id" class="form-control" id="status" required="true">
            <option value="">Seleccione</option>
-           <option value="1" {{ (isset($useradmon->deparment_id) && $useradmon->deparment_id == 1) ? 'selected' : ''}}>GESTION HUMANA</option>
-           <option value="2" {{ (isset($useradmon->deparment_id) && $useradmon->deparment_id == 2) ? 'selected' : ''}}>BODEGA GLX Y OPERACIONES</option>
-           <option value="3" {{ (isset($useradmon->deparment_id) && $useradmon->deparment_id == 3) ? 'selected' : ''}}>BODEGA BRECCIA</option>
-           <option value="4" {{ (isset($useradmon->deparment_id) && $useradmon->deparment_id == 4) ? 'selected' : ''}}>COMPRAS</option>
-           <option value="5" {{ (isset($useradmon->deparment_id) && $useradmon->deparment_id == 5) ? 'selected' : ''}}>MERCADEO</option>
-           <option value="6" {{ (isset($useradmon->deparment_id) && $useradmon->deparment_id == 6) ? 'selected' : ''}}>SISTEMAS</option>
-           <option value="7" {{ (isset($useradmon->deparment_id) && $useradmon->deparment_id == 7) ? 'selected' : ''}}>FINANZAS</option>
-           <option value="8" {{ (isset($useradmon->deparment_id) && $useradmon->deparment_id == 8) ? 'selected' : ''}}>ADMINISTRACIÓN</option>
-           <option value="9" {{ (isset($useradmon->deparment_id) && $useradmon->deparment_id == 9) ? 'selected' : ''}}>ALQUILER E IMPORTACIONES</option>
-           <option value="11" {{ (isset($useradmon->deparment_id) && $useradmon->deparment_id ==11) ? 'selected' : ''}}>COMERCIAL Y NEGOCIOS ESPECIALES</option>
-           <option value="12" {{ (isset($useradmon->deparment_id) && $useradmon->deparment_id == 12) ? 'selected' : ''}}>CEP</option>
+           <option value="1" {{ (isset($useradmon->deparment_id) && $useradmon->deparment_id == 1) ? 'selected' : ''}}>Chile</option>
+           <option value="2" {{ (isset($useradmon->deparment_id) && $useradmon->deparment_id == 2) ? 'selected' : ''}}>Colombia</option>
+           <option value="3" {{ (isset($useradmon->deparment_id) && $useradmon->deparment_id == 3) ? 'selected' : ''}}>Panama</option>
+           <option value="4" {{ (isset($useradmon->deparment_id) && $useradmon->deparment_id == 4) ? 'selected' : ''}}>Corporate</option>
+           <option value="5" {{ (isset($useradmon->deparment_id) && $useradmon->deparment_id == 5) ? 'selected' : ''}}>Costa Rica</option>
         </select>
         {!! $errors->first('status', '<p class="help-block">:message</p>') !!}
     </div>

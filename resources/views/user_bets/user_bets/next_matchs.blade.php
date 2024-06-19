@@ -17,8 +17,8 @@
             <td align="left" class="tablebets">{{$match->match_date}} - {{$match->match_hour}}                             
             </td>
             <td align="left" class="tablebets">{{$match->name_team1}}
-                <img src="{{ asset('/resources/'.$match->flag_team1) }}" class="sizeflag">
-                <input type="hidden" name="" class="flag_team1" value="{{ asset('/resources/'.$match->flag_team1) }}">
+                <img src="{{ asset('/build/assets/resources/'.$match->flag_team1) }}" class="sizeflag">
+                <input type="hidden" name="" class="flag_team1" value="{{ asset('/build/assets/resources/'.$match->flag_team1) }}">
                 <input type="hidden" name="" class="match_id" value="{{$match->match_id}}">
                 <input type="hidden" name="" class="name_team1" value="{{$match->name_team1}}">
                 <input type="hidden" name="" class="score_team_1_opc1" value="{{$match->score_team1_op1}}">
@@ -33,8 +33,8 @@
                 <strong>{{$match->score_team1_op2}} </strong> 
             </td>               
             <td align="left" class="tablebets">{{$match->name_team2}}
-                <img src="{{ asset('/resources/'.$match->flag_team2) }}" class="sizeflag">
-                <input type="hidden" name="" class="flag_team2" value="{{ asset('/resources/'.$match->flag_team2) }}">
+                <img src="{{ asset('/build/assets/resources/'.$match->flag_team2) }}" class="sizeflag">
+                <input type="hidden" name="" class="flag_team2" value="{{ asset('/build/assets/resources/'.$match->flag_team2) }}">
                 <input type="hidden" name="" class="name_team2" value="{{$match->name_team2}}">
 
             </td>

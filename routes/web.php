@@ -33,6 +33,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('/matches/matches', MatchesController::class);
     Route::resource('/teams/teams', TeamsController::class);
     Route::resource('/ranking/ranking', RankingController::class);
+    Route::get('ranking/ranking/{deparmentId}/show-by-deparment', [RankingController::class, 'showByDeparment']);
     Route::resource('/rounds/rounds', RoundsController::class);
     Route::resource('/user_bets/user_bets', User_betsController::class);
     Route::post('user_bets/user_bets', [User_betsController::class, 'saveBet']);

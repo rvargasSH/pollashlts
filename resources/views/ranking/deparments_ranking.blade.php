@@ -10,7 +10,8 @@
                         {{$i+1}}                         
                     </td>
                     <td align="left">
-                        {{$deparments_ranking[$i]->deparment->name}}
+                       
+                        <a href="{{ url('/ranking/ranking/' . $deparments_ranking[$i]->deparment_id . '/show-by-deparment') }}" title="Show ranking by country"> {{$deparments_ranking[$i]->deparment->name}}</a>
                     </td>
                     <td align="left">
                         {{$deparments_ranking[$i]->points}}

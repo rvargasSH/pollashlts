@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<script src="{{  mix('/resources/js/validate_register.js') }}"></script>
+@vite(['resources/js/validate_register.js'])
 <div class="container">
     <input type="hidden" id="_token" value="{{ csrf_token() }}">    
     <div class="row">
@@ -12,19 +12,6 @@
                 <div class="panel-body">
                     <form class="form-horizontal" id="register_first_time" method="POST" action="{{ url('updateuser') }}">
                         {{ csrf_field() }}
-                        {{-- <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                            <label for="name" class="col-md-4 control-label">Numero Identificación</label>
-
-                            <div class="col-md-6">                                
-                                <input id="identification_number" type="text" class="form-control" name="identification_id" value="{{ $user->identification_number }}" required autofocus minlength="5" maxlength="50" readonly="true">
-
-                                @if ($errors->has('identification_number'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('identification_number') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div> --}}
 
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                             <label for="name" class="col-md-4 control-label">Nombre</label>

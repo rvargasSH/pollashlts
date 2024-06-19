@@ -144,7 +144,7 @@ class MatchesController extends Controller
         #search the roudn from this Matches to get the points acording whit each politic.
         $round = Round::find($requestData['round_id']);
         $Matches->update($requestData);
-        if ($requestData['status'] == 2) {
+        if (intval($requestData['status']) == 2) {
             $bets = User_bet::where('match_id', $requestData['match_id'])->get();
             foreach ($bets as $key => $user) {
                 $points = $this->generateUsersRanking($requestData['score_team1'], $requestData['score_team2'], $user, $round);
@@ -301,58 +301,6 @@ class MatchesController extends Controller
                 }
             }
         }
-    }
-
-    public function sendMessage()
-    {
-        date_default_timezone_set('America/Bogota');
-        $datetoday = 'Y-m-d';
-        $hournow = date("H:i", strtotime('+30 minutes'));
-        $Matches_now = Matches::where('Matches_date', $datetoday)->where('Matches_hour', $hournow)->get();
-        // $file = Excel::create('Resultados', function ($excel) use ($Matches_now) {
-        //     $excel->setTitle('no title');
-        //     $excel->setCreator('no no creator')->setCompany('no company');
-        //     $excel->setDescription('Resultados Polla');
-        //     foreach ($Matches_now as $key => $value) {
-        //         $namesheet = substr($value->nameteam1->name, 0, 3) . "-" . substr($value->nameteam2->name, 0, 3);
-        //         $data = [];
-        //         $Matchesnamefirstop = $value->nameteam1->name . " vs " . $value->nameteam2->name . " Opcion Uno";
-        //         $Matchesnamesecondop = $value->nameteam1->name . " vs " . $value->nameteam2->name . " Opcion Dos";
-        //         $data[0] = array('Nombre Participante', $Matchesnamefirstop, $Matchesnamesecondop);
-        //         $excel->sheet($namesheet, function ($sheet) use ($value, $data) {
-        //             $a = 1;
-        //             foreach ($value->Matches_bets as $key => $user_bet) {
-        //                 $scoreone = $user_bet->score_team1_op1 . "-" . $user_bet->score_team2_op1;
-        //                 $scoretwo = $user_bet->score_team1_op2 . "-" . $user_bet->score_team2_op2;
-
-        //                 $data[$a] = array($user_bet->user->name, $scoreone, $scoretwo);
-        //                 $a++;
-        //             }
-        //             $sheet->fromArray($data, null, 'A1', false, false);
-        //             $sheet->cells('A1:C1', function ($cells) {
-        //                 $cells->setBackground('#AAAAFF');
-        //             });
-        //         });
-        //     }
-        // });
-        // $mail_send = [];
-        // $a = 0;
-        // foreach ($Matches_now as $key => $value) {
-        //     foreach ($value->Matches_bets as $key => $user_bet) {
-        //         $mail_send[$a] = $user_bet->user->email;
-        //         $a++;
-        //     }
-        // }
-        // if (count($mail_send) > 0) {
-        //     $mail_send[$a + 1] = "vargas.reynaldo@locatelcolombia.com";
-        //     Mail::send('mail.message', $mail_send, function ($message) use ($file, $mail_send) {
-        //         $message->from('noreply@locatelcolombia.com', 'Polla Locatel');
-        //         $message->subject('Prueba Polla Locatel');
-        //         $message->to($mail_send, 'Polla Locatel');
-        //         $message->attach($file->store("xls", false, true)['full']);
-        //     });
-        //     Log::info('Mails Sent');
-        // }
     }
 
     public function calculatedifere($resul1, $resul2, $uresul1, $uresul2)

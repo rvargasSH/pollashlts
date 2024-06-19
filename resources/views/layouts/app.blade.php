@@ -13,11 +13,7 @@
     <title>Polla Saint Honore</title>
     <link rel="shortcut icon" href="{{ asset('img/logs/favicon.ico') }}" type="image/vnd.microsoft.icon">
 
-
-
-    <link href="{{ asset('/resources/css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('/resources/css/style.css') }}" rel="stylesheet">
-    <link href="{{ asset('/resources/css/toastr.min.css') }}" rel="stylesheet">
+    @vite(['resources/css/app.css','resources/css/style.css','resources/css/toastr.min.css', 'resources/js/app.js','resources/js/vue.min.js'])
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 
 
@@ -55,10 +51,8 @@
     </div>
 
     <!-- Scripts -->
-    <script src="{{ asset('resources/js/app.js') }}"></script>
-    <script src="{{ asset('resources/js/vue.min.js') }}"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
-    <script src="{{ asset('resources/js/toastr.min.js') }}"></script>
+    @vite(['resources/js/toastr.min.js'])
 </body>
 </html>

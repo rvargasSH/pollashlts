@@ -64,7 +64,7 @@ class RankingController extends Controller
             foreach ($users_ranking as $key => $user_ranking) {
                 $sql = "SELECT count(b.user_id) as total_bets
                 from user_bets b 
-                join matches m on m.match_id=b.match_id and  m.status=2 
+                join matches m on m.match_id=b.match_id and  m.status='2' 
                 where b.user_id=$user_ranking->user_id";
                 $total_bets = DB::select($sql);
                 $users_ranking[$a]->bets = $total_bets[0]->total_bets;
@@ -90,10 +90,6 @@ class RankingController extends Controller
                 'ranking_worldcup' => $ranking_worldcup,
             );
         }
-        // if($user->email=='portela.john@locatelcolombia.com')
-        // {
-        //    $this->get_ranking_file($data); 
-        // }
 
         return view('ranking.ranking')->with($data);
     }
@@ -102,7 +98,7 @@ class RankingController extends Controller
         $perPage = 10;
         $sql = "SELECT  b.*,u.name as user_name,r.name as round_name,t.name as team1_name,t2.name as team2_name,m.score_team1, m.score_team2
          from user_bets b 
-         join matches m on m.match_id=b.match_id and  m.status=2 
+         join matches m on m.match_id=b.match_id and  m.status='2' 
          join users u on u.id=b.user_id
          join rounds r on r.id=m.round_id 
          join teams t on t.id=m.id_team1
@@ -135,46 +131,16 @@ class RankingController extends Controller
             ['path' => $request->url(), 'query' => $request->query()]
         );
     }
-    public function get_ranking_file($data)
-    {
-        // Excel::create('Ranking_Primera_Ronda', function ($excel) use ($data) {
-        //     $excel->setTitle('no title');
-        //     $excel->setCreator('no no creator')->setCompany('no company');
-        //     $excel->setDescription('Ranking');
-        //     $datasend[0] = array('Posición', 'Nombre', 'Puntos', 'Partidos Apostados');
-        //     $namesheet = 'Ranking Usuarios';
-        //     $excel->sheet($namesheet, function ($sheet) use ($data) {
-        //         $a = 1;
-        //         foreach ($data['rankingUsers'] as $key => $user) {
-        //             $datasend[$a] = array($user->position, $user->name, $user->points, $user->bets);
-        //             $a++;
-        //         }
-        //         $sheet->fromArray($datasend, null, 'A1', false, false);
-        //         $sheet->cells('A1:D1', function ($cells) {
-        //             $cells->setBackground('#AAAAFF');
-        //         });
-        //     });
 
-        //     $datasend[0] = array('Posición', 'Nombre', 'Promedio');
-        //     $namesheet = 'Ranking Dependencias';
-        //     $excel->sheet($namesheet, function ($sheet) use ($data) {
-        //         $a = 1;
-        //         foreach ($data['deparments_ranking'] as $key => $deparmentrank) {
-        //             $datasend[$a] = array($a, $deparmentrank->deparment->name, $deparmentrank->points);
-        //             $a++;
-        //         }
-        //         $sheet->fromArray($datasend, null, 'A1', false, false);
-        //         $sheet->cells('A1:C1', function ($cells) {
-        //             $cells->setBackground('#AAAAFF');
-        //         });
-        //     });
-        // })->export('xls');
-        // $mail_send[0]="vargas.reynaldo@locatelcolombia.com";
-        // Mail::send('mail.message',$mail_send,function($message) use ($file,$mail_send){
-        //     $message->from('noreply@locatelcolombia.com','Polla Locatel');
-        //     $message->subject('Prueba Polla Locatel');
-        //     $message->to($mail_send,'Polla Locatel');
-        //     $message->attach($file->store("xls",false,true)['full']);
-        // });
+    public function showByDeparment($deparmentId)
+    {
+
+        $sql = "select ru.points,u.name as user,d.name as deparment from raking_user ru
+        join users u on u.id =ru.user_id 
+        join deparments d on d.id =u.id 
+        where u.deparment_id =$deparmentId order by ru.points desc limit 10";
+        $user_bets = DB::select($sql);
+        $data = array('ranking' => $user_bets, 'hiddemenu' => $this->validateuser(),);
+        return view('ranking.ranking_by_deparment')->with($data);
     }
 }

@@ -1,5 +1,5 @@
 
-<input class="form-control" name="match_id" type="hidden" id="match_id" value="{{ isset($match->match_id)  or ''}}" >
+<input class="form-control" name="match_id" type="number" id="match_id" value={{$match->match_id}} >
 <div class="form-group {{ $errors->has('id_team1') ? 'has-error' : ''}}">
     <label for="id_team1" class="col-md-4 control-label">{{ 'Equipo uno' }}</label>
     <div class="col-md-6">
@@ -57,14 +57,14 @@
 </div><div class="form-group {{ $errors->has('score_one_team1') ? 'has-error' : ''}}">
     <label for="score_one_team1" class="col-md-4 control-label">{{ 'Marcador Equipo Uno' }}</label>
     <div class="col-md-6">
-        <input class="form-control" name="score_team1" type="number" id="score_team1" value="{{ isset($match->score_team1) or ''}}">
+        <input class="form-control" name="score_team1" type="number" id="score_team1" value="{{$match->score_team1}}">
         {!! $errors->first('score_team1', '<p class="help-block">:message</p>') !!}
     </div>
 </div>
 <div class="form-group {{ $errors->has('score_team2') ? 'has-error' : ''}}">
     <label for="score_team2" class="col-md-4 control-label">{{ 'Marcador Equipo dos' }}</label>
     <div class="col-md-6">
-        <input class="form-control" name="score_team2" type="number" id="score_team2" value="{{ isset($match->score_team2) or ''}}" >
+        <input class="form-control" name="score_team2" type="number" id="score_team2" value="{{ $match->score_team2}}" >
         {!! $errors->first('score_team2', '<p class="help-block">:message</p>') !!}
     </div>
 </div>

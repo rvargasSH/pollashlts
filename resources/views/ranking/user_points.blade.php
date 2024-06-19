@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<script src="{{ asset('js/create_bets.js') }}"></script>
+@vite(['resources/js/create_bets.js'])
 <div class="container" id="generate_bets">
    <input type="hidden" id="_token" value="{{ csrf_token() }}">
    <div class="row">
@@ -9,10 +9,7 @@
         <div class="col-md-9">
             <div class="card">
                 <div class="panel-heading">Puntos De:
-                     @foreach($user_bets as $points)
-                     {{--*/ $var = $points->user_name /*--}}
-                     @endforeach
-                     {{ $var }}
+                     {{ $user_bets[0]->user_name }}
                 </div>
 
                 <div class="panel-body">
